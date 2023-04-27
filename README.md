@@ -21,6 +21,8 @@ moves, if it is in state q and receives the input σ.
 
 ### Prerequisties
 
+Make sure to use Node version `18.16.0` or higher to run this project.
+
 It's recommanded to use [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md) for managing Node version locally and in this project. To install nvm, and use node latest stable version
 
 ```
@@ -36,6 +38,12 @@ If nvm is already installed just run `nvm use` to set it to mnimum node version 
 
 ```
 npm install
+```
+
+### Run build
+
+```
+npm build
 ```
 
 ### Run tests
