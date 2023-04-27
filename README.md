@@ -56,6 +56,8 @@ npm install generate-fsm
 
 ### Usage
 
+This is an example to implement a modThreeFSM using generateFSM api.
+
 ```typescript
   import { FSM, createFSM, runFSM } from "../src/index";
    
