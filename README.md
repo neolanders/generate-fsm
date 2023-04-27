@@ -46,9 +46,15 @@ Tests using [jest](https://jestjs.io/docs/getting-started)
 npm test
 ```
 
+### Publish
+
+```sh
+npm publish
+```
+
 ### Package Installation
 
-After publish to install this lirary run
+After publish to install this library in your project run
 
 ```sh
 npm install generate-fsm
