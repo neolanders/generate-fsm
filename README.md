@@ -65,7 +65,7 @@ npm install generate-fsm
 ### Usage
 
 ```typescript
-  import { FSM, createFSM, runFSM } from "../src/index";
+  import { FSM, createFSM, runFSM } from "generate-fsm";
    
   const Q = new Set(["S0", "S1", "S2"]);
   const alphabet = new Set(["0", "1"]);
