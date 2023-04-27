@@ -1,6 +1,6 @@
 import { FSM, createFSM, runFSM } from "../src/index";
 
-test("generate a new FSM and implement mod-three procedure", () => {
+describe("generate a new FSM and implement mod-three procedure", () => {
   const Q = new Set(["S0", "S1", "S2"]);
   const alphabet = new Set(["0", "1"]);
   const q0 = "S0";
@@ -12,10 +12,27 @@ test("generate a new FSM and implement mod-three procedure", () => {
   ]);
   const modThreeFSM: FSM<string> = createFSM(Q, alphabet, q0, F, delta);
 
-  expect(runFSM(modThreeFSM, '101010')).toBe('S0'); 
-  expect(runFSM(modThreeFSM, '010101')).toBe('S0');
-  expect(runFSM(modThreeFSM, '110')).toBe('S0');
-  expect(runFSM(modThreeFSM, '111')).toBe('S1');
-  expect(runFSM(modThreeFSM, '1010')).toBe('S1');
-  expect(runFSM(modThreeFSM, '10')).toBe('S2');
+  test("101010 input should return S0", () => {
+    expect(runFSM(modThreeFSM, '101010')).toBe('S0'); 
+  });
+
+  test("010101 input should return S0", () => {
+    expect(runFSM(modThreeFSM, '101010')).toBe('S0'); 
+  });
+
+  test("110 input should return S0", () => {
+    expect(runFSM(modThreeFSM, '101010')).toBe('S0'); 
+  });
+
+  test("111 input should return S1", () => {
+    expect(runFSM(modThreeFSM, '111')).toBe('S1'); 
+  });
+
+  test("1010 input should return S1", () => {
+    expect(runFSM(modThreeFSM, '1010')).toBe('S1'); 
+  });
+
+  test("10 input should return S2", () => {
+    expect(runFSM(modThreeFSM, '10')).toBe('S2'); 
+  });
 });
