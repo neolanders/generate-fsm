@@ -1,4 +1,4 @@
-export interface FSM<T> {
+interface FSM<T> {
   states: Set<T>;
   alphabet: Set<string>;
   initialState: T;
@@ -16,7 +16,7 @@ export interface FSM<T> {
  * @param {Map<T, Map<string, T>} delta - The transition function
  * 
  */
-export function createFSM<T>(
+function createFSM<T>(
   states: Set<T>,
   alphabet: Set<string>,
   initialState: T,
@@ -40,7 +40,7 @@ export function createFSM<T>(
  * @param {string}       input - A finite input alphabet
  * 
  */
-export function runFSM<T>(fsm: FSM<T>, input: string): T {
+function runFSM<T>(fsm: FSM<T>, input: string): T {
   let currentState: T = fsm.initialState;
   for (const symbol of input) {
     const nextState = fsm.transition.get(currentState)?.get(symbol);
@@ -54,4 +54,5 @@ export function runFSM<T>(fsm: FSM<T>, input: string): T {
   }
   return currentState;
 }
-  
+
+export { runFSM, createFSM, FSM };

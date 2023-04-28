@@ -65,7 +65,7 @@ npm install generate-fsm
 ### Usage
 
 ```typescript
-  import { FSM, createFSM, runFSM } from "generate-fsm";
+  import * as fsm from "generate-fsm";
    
   const Q = new Set(["S0", "S1", "S2"]);
   const alphabet = new Set(["0", "1"]);
@@ -76,8 +76,7 @@ npm install generate-fsm
     ["S1", new Map([["0", "S2"], ["1", "S0"]])],
     ["S2", new Map([["0", "S1"], ["1", "S2"]])]
   ]);
-  const modThreeFSM: FSM<string> = createFSM(Q, alphabet, q0, F, delta);
-
-  const result = runFSM(modThreeFSM, '101010'); 
-  console.log("S0");
+  const modThreeFSM: FSM<string> = fsm.createFSM(Q, alphabet, q0, F, delta);
+  const result = fsm.runFSM(modThreeFSM, '101010'); 
+  console.log(result); // "S0"
 ```
