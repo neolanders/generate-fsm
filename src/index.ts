@@ -9,11 +9,11 @@ interface FSM<T> {
 /**
  * A createFSM function that create a new FSM 
  *
- * @param {Set<T>}       Q - A finite set of states.
+ * @param {Set<T>}       states - A finite set of states.
  * @param {Set<string>}  alphabet - A finite input alphabet
- * @param {T}            q0 - The initial state
- * @param {Set<T>}       F - The set of accepting/final states
- * @param {Map<T, Map<string, T>} delta - The transition function
+ * @param {T}            initialState - The initial state
+ * @param {Set<T>}       acceptingStates - The set of accepting/final states
+ * @param {Map<T, Map<string, T>} transition - The transition function
  * 
  */
 function createFSM<T>(
